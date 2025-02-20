@@ -14,15 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'welcome';
+});
+
+Route::get('about', function () {
+    return 'Hello, My Name Nopal <br> 2341760148';
 });
 
 Route::get('/hello', function () {
     return 'Hello World';
 });
 
-Route::get('/user/{name}', function ($name) {
-    return 'My name is '.$name;
+Route::get('/world', function () {
+    return 'World';
+});
+
+// Route::get('/user/{name?}', function ($name=null) {
+// return 'My name is '.$name;
+// });
+
+Route::get('/user/{name?}', function ($name='John') {
+    return 'Nama saya '.$name;
 });
 
 Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
